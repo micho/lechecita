@@ -1,1 +1,39 @@
-Hallo
+%h1
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FeedHooker
+  %span.beta * private beta *
+
+.panel
+  %p RSS and Atom feeds changed the way we use the web. But writing an app that polls feeds is a pain in the ass.
+  %p FeedHooker allows you to get notified each time a feed is updated.
+
+  %h2 How does it work?
+  %p.monospace 1. Get a developer account.
+  %p.monospace 2. Add the feeds you want to watch via the web interface or via API.
+  %p.monospace 3. Each time a feed has new content, we'll POST its contents to you.
+
+  %h2 RESTful API
+  %p.monospace2 GET /feeds &nbsp;&nbsp;&nbsp;# => Give me all the feeds I'm following
+  %p.monospace2 POST /feeds &nbsp;&nbsp;# => Add a new feed to the watching list
+  %p.monospace2 PUT /hooks&nbsp;&nbsp;&nbsp; # => Update the URL FeedHooker notifies you at
+  %p.monospace2 DELETE /feeds/:id &nbsp;&nbsp;# => Stop watching a feed
+
+  %h2 Each time a feed is updated...
+  %p We will POST its data to the URL you specify. We will send a JSON payload with all the new feed items.
+
+.panel
+  .interest
+    %h2 Interested?
+    %p
+      Follow us on Twitter:
+      = link_to "@feedhooker", "http://twitter.com/feedhooker"
+    %p
+      We will be launching soon.
+
+  %p.smaller
+    This idea is brought to you by
+    = link_to "Teambox", "http://teambox.com"
+    and 
+    = link_to "Talker", "http://talkerapp.com"
+  %p.smaller
+    = mail_to "feedhooker@teambox.com", "Get in touch by mail,"
+    too.
