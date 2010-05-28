@@ -1,4 +1,6 @@
 Feedhooker::Application.routes.draw do |map|
+  resources :offers
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

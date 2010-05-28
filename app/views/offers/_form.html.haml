@@ -1,0 +1,17 @@
+= form_for(@offer) do |f|
+  - if @offer.errors.any?
+    #errorExplanation
+      %h2
+        = pluralize(@offer.errors.count, "error")
+        prohibited this offer from being saved:
+      %ul
+      - @offer.errors.full_messages.each do |msg|
+        %li= msg
+
+  .field
+    = f.label :quantity
+    %br
+    = f.text_field :quantity
+    = f.select :unit_type, Offer::UNIT_TYPES.enum_with_index
+  .actions
+    = f.submit

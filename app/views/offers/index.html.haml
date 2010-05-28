@@ -1,0 +1,11 @@
+%h2 Ofertas
+
+- @offers.each do |offer|
+  %p
+    Oferta: 
+    = offer.volume
+    = link_to 'Destroy', offer, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+%p= link_to 'New Offer', new_offer_path

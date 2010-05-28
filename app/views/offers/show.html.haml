@@ -1,0 +1,13 @@
+.notice= notice
+
+%p
+  %b Quantity:
+  = @offer.quantity
+
+%p
+  %b Unit type:
+  = @offer.unit_type
+
+
+= link_to 'Edit', edit_offer_path(@offer)
+= link_to 'Back', offers_path
